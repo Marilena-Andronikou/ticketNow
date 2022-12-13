@@ -27,7 +27,7 @@ public class Post {
 		}
 
         public void addComment() {
-			System.out.println("Please insert the post's code you want to comment on")
+			System.out.println("Please insert the post's code you want to comment on");
 			int pcode = input.nextInt();
 			System.out.println("Insert your comment");
 			String comtext = input.nextString();
