@@ -1,3 +1,5 @@
+package com.ticketNow;
+
 import java.util.Scanner;
 package ticketNow;
 
