@@ -1,27 +1,32 @@
 package ticketNow;
 
+import java.util.Scanner;
+import ticketNow.ConnectionwithSQL;
+
 public class User {
 	private String username;
-	private long password;
+	private String password;
 	private String email;
 	ConnectionwithSQL con = new ConnectionwithSQL();
-	public User(String u, long p, String em) {
+	public User(String u, String p, String em) {
 		username = u;
 		password = p;
 		email = em;
-		con.insertUser(u,p,e);
+		con.insertUser(u,p,em);
 	}
 
 	public int login(int ans1) {
-		system.out.println("Insert your name");
-		String name = inp.nextString();
+
+		Scanner inp = new Scanner(System.in);
+		System.out.println("Insert your name");
+		String name = inp.next();
 		String result = con.search(name,ans1);
-		a = 0;
+		int a = 0;
 		if (result == "invalid name") {
 			System.out.println("Username does not exist");
 		} else {
-			system.out.println("Insert your password");
-			String password = inp.nextString();
+			System.out.println("Insert your password");
+			String password = inp.next();
 			if (result == password) {
 				System.out.println("Welcome back" + name);
 				a = 1;
@@ -34,18 +39,20 @@ public class User {
 	}
 
 	public int register(int ans1) {
-		system.out.println("Insert your name");
-		String name = inp.nextString();
+
+		Scanner inp = new Scanner(System.in);
+		System.out.println("Insert your name");
+		String name = inp.next();
 		String result = con.search(name,ans1);
-		a = 0;
+		int a = 0;
 		if (result == "Username taken") {
 			System.out.println ("Username is already taken, try again");
 		} else {
-			system.out.println("Insert your password");
-			system.out.println("Insert your email");
+			System.out.println("Insert your password");
+			System.out.println("Insert your email");
 			System.out.println ("Welcome" + name);
-			String password = inp.nextString();
-			String email = inp.nextString();
+			String password = inp.next();
+			String email = inp.next();
 			this.username = name;
 			this.password = password;
 			this.email = email;
@@ -62,11 +69,11 @@ public class User {
 		return username;
 	}
 
-	public void setPassword(long y) {
+	public void setPassword(String y) {
 		password = y;
 	}
 
-	public long getPassword() {
+	public String getPassword() {
 		return password;
 	}
 
