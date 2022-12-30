@@ -1,4 +1,4 @@
-package com.ticketNow;
+package ticketNow;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
