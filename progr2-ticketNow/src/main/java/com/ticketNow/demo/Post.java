@@ -1,7 +1,7 @@
-package ticketNow;
+package com.ticketNow;
 
 import java.util.Scanner;
-package ticketNow.ConnectionwithSQL;
+import com.ticketNow.ConnectionwithSQL;
 
 public class Post {
 	    private String label;
