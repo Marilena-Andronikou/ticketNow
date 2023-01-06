@@ -1,5 +1,9 @@
+package com.ticketNow;
+
 import java.util.Scanner;
-package ticketNow;
+import com.ticketNow.User;
+import com.ticketNow.Post;
+
 public class TicketNow {
 	private User u = new User();
 	public static void main (String[] args) {
