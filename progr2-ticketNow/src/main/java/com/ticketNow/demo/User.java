@@ -1,7 +1,7 @@
-package ticketNow;
+package com.ticketNow;
 
 import java.util.Scanner;
-import ticketNow.ConnectionwithSQL;
+import com.ticketNow.ConnectionwithSQL;
 
 public class User {
 	private String username;
