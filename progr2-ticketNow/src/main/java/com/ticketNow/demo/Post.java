@@ -20,7 +20,7 @@ public class Post {
 			connect.availablePost();
 			System.out.println("Press 1 to comment on a post, 2 to like a post");
 			System.out.println("Any other key to stop viewing posts");
-			ans3 = input.next();
+			int ans3 = input.nextInt();
 			if (ans3 == 1) {
 				addComment();
 			} else if (ans3 == 2) {
@@ -53,7 +53,7 @@ public class Post {
 
 			Scanner input = new Scanner(System.in);
 			System.out.println("Please insert the label of your post");
-			labelP = input.next();
+			String labelP = input.next();
 			connect.insertPost(labelP);
 
 		}

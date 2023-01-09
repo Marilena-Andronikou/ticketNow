@@ -8,11 +8,8 @@ public class User {
 	private String password;
 	private String email;
 	ConnectionwithSQL con = new ConnectionwithSQL();
-	public User(String u, String p, String em) {
-		username = u;
-		password = p;
-		email = em;
-		con.insertUser(u,p,em);
+	public User() {
+		
 	}
 
 	public int login(int ans1) {
