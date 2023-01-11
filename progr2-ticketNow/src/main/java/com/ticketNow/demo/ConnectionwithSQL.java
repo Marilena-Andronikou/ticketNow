@@ -11,8 +11,9 @@ import java.util.Scanner;
 public class ConnectionwithSQL {
 
 	public static Connection connection(){
-		String driver = "";
-		String url = "";
+		String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+		String url = "jdbc:sqlserver://sqlserver.LAPTOP-RQ3S8RU7:1433;" +
+                "databaseName=TicketNow;";
 
 		try {
 			Class.forName(driver);
@@ -27,16 +28,16 @@ public class ConnectionwithSQL {
 		} catch (SQLException e) {
 			System.err.println("SQL exception happened during connetion with SQL");
 			e.printStackTrace();
-			return null; 
+			return null;
 		}
-		
+
 
 	}
 
 	public static void availablePost() {
 		    try{
 		    	Connection conn = connection();
-		   
+
 			String query = "SELECT * FROM Posts";
 			PreparedStatement ps = conn.prepareStatement(query);
 			ResultSet rs = ps.executeQuery(query);
@@ -52,14 +53,14 @@ public class ConnectionwithSQL {
 		    } catch(SQLException e) {
 				System.err.println("SQL exception happened during connetion with SQL");
 				e.printStackTrace();
-				 
+
 			}
 
 	}
 
 	public static void addLike(int pcode) {
 		Connection conn = connection();
-		
+
 		Statement statement;
 		try {
 			statement = conn.createStatement();
@@ -68,7 +69,7 @@ public class ConnectionwithSQL {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
 
 	public void insertPost(String labelP){
@@ -122,18 +123,18 @@ public class ConnectionwithSQL {
 						 return "Username taken";
 					}
 				}
-				
+
 
 			}
-			return null; 
+			return null;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			return null; 
+			return null;
 		}
-		
-		
-		
-		
+
+
+
+
 	}
 }
