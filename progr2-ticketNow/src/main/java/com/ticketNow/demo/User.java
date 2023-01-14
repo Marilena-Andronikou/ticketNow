@@ -12,50 +12,32 @@ public class User {
 		
 	}
 
-	public int login(int ans1) {
+	public void login(int ans1) {
 
 		Scanner inp = new Scanner(System.in);
 		System.out.println("Insert your name");
-		String name = inp.next();
-		String result = con.search(name,ans1);
-		int a = 0;
-		if (result == "invalid name") {
-			System.out.println("Username does not exist");
-		} else {
-			System.out.println("Insert your password");
-			String password = inp.next();
-			if (result == password) {
-				System.out.println("Welcome back" + name);
-				a = 1;
-				this.username = name;
-			} else {
-				System.out.println("Wrong password try again");
-			}
-		}
-		return a;
+		String name = inp.nextLine();
+		int result = con.search(name,ans1);
+		System.out.println("Successful login!");
+		this.username = name;
+		this.password = password;
+		this.email = email;
 	}
 
-	public int register(int ans1) {
+	public void register(int ans1) {
 
 		Scanner inp = new Scanner(System.in);
 		System.out.println("Insert your name");
 		String name = inp.next();
-		String result = con.search(name,ans1);
-		int a = 0;
-		if (result == "Username taken") {
-			System.out.println ("Username is already taken, try again");
-		} else {
-			System.out.println("Insert your password");
-			System.out.println("Insert your email");
-			System.out.println ("Welcome" + name);
-			String password = inp.next();
-			String email = inp.next();
-			this.username = name;
-			this.password = password;
-			this.email = email;
-			a = 1;
-		}
-		return a;
+		int result = con.search(name,ans1);
+		System.out.println("Insert your password");
+		String password = inp.next();
+		System.out.println("Insert your e-mail");
+		String email = inp.next();
+		this.username = name;
+		this.password = password;
+		this.email = email;
+		con.insertUser(name, password, email);
 	}
 
 	public void setUsername(String x) {

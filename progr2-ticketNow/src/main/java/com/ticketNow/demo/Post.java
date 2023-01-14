@@ -49,12 +49,12 @@ public class Post {
 
 		}
 
-		public void addPost() {
+		public void addPost(String username) {
 
 			Scanner input = new Scanner(System.in);
 			System.out.println("Please insert the label of your post");
 			String labelP = input.next();
-			connect.insertPost(labelP);
+			connect.insertPost(labelP, username);
 
 		}
 

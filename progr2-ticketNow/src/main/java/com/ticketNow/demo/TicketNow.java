@@ -12,18 +12,14 @@ public class TicketNow {
 		
 	}
 	public static void openingScreen() {
-		int a = 0;
 		Scanner inp = new Scanner(System.in);
 		System.out.println("Please press 1 for login \n 2 for register");
 		int ans1 = inp.nextInt();
-		while (a == 0) {
 			if (ans1 == 1) {
-				a = u.login(ans1);
+				u.login(ans1);
 			} else if(ans1 ==2) {
-				a = u.register(ans1);
-			}
-		}
-		
+				u.register(ans1);
+			}		
 		mainCourse();
 	}
 
@@ -34,43 +30,14 @@ public class TicketNow {
 		int ans2 = inp.nextInt();
 		if (ans2 == 1) {
 			p.viewPosts();
+			mainCourse();
 		} else if (ans2 == 2) {
-			p.addPost();
+			p.addPost(u.getUsername());
+			mainCourse();
 		} else if (ans2 == 3) {
 			System.out.println("See you later");
-			openingScreen();
+			System.exit(0);
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
