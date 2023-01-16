@@ -10,8 +10,6 @@ import java.util.Scanner;
 
 public class ConnectionwithSQL {
 
-	private int pcode = 1;
-	private int ccode = 1;
 	public static Connection connection(){
 		String url = "jdbc:sqlserver://LAPTOP-RQ3S8RU7:1433;" + "DatabaseName=TicketNow;user=sophia;password=thakopoume!?;encrypt=true;trustServerCertificate=true;";
 	  	try {
@@ -76,8 +74,7 @@ public class ConnectionwithSQL {
 		try {
 			Connection conn = connection();
 			Statement statement = conn.createStatement();
-			statement.executeUpdate("INSERT INTO Posts(pcode,labelP,likes,username) VALUES("+ pcode + ",'" + labelP + "'," + 0 + ",'" + username+"')");
-			pcode++;
+			statement.executeUpdate("INSERT INTO Posts(labelP,likes,username) VALUES('" + labelP + "'," + 0 + ",'" + username+"')");
 			
 		} catch (SQLException e) {
 			System.err.println("SQL exception happened during connetion with SQL");
@@ -88,9 +85,8 @@ public class ConnectionwithSQL {
 			try {
 				Connection conn = connection();
 				Statement statement = conn.createStatement();
-				statement.executeUpdate("INSERT INTO Comments (ccode,comtext,pcode,username) VALUES("+ ccode +
+				statement.executeUpdate("INSERT INTO Comments (comtext,pcode,username) VALUES(" +
 				  ",'" + cometext + "'," + pcode + ",'" + username +"')");
-				ccode++;
 			} catch (SQLException e) {
 				System.err.println("SQL exception happened during connetion with SQL");
 				e.printStackTrace();
