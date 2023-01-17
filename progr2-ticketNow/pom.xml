@@ -14,10 +14,13 @@
   <url>http://www.example.com</url>
 
   <properties>
-    <start-class>com.ticketNow.demo.TicketNow</start-class>
+    <start-class>ticketNow.TicketNow</start-class>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
+    <server>DESKTOP-679ENEG</server>
+    <database>TicketNow</database>
+    <port>1433</port>
   </properties>
 
   <dependencies>
@@ -28,14 +31,9 @@
       <type>pom</type>
     </dependency>
     <dependency>
-      <groupId>com.mysql</groupId>
-      <artifactId>mysql-connector-j</artifactId>
-      <version>8.0.31</version>
-    </dependency>
-    <dependency>
       <groupId>com.microsoft.sqlserver</groupId>
-      <artifactId>mssql-jdbc</artifactId>
-      <version>12.1.0.jre11-preview</version>
+	    <artifactId>mssql-jdbc</artifactId>
+	    <version>11.2.1.jre17</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
@@ -97,7 +95,7 @@
 					          <addClasspath>true</addClasspath>
                     <classpathPrefix>libs/</classpathPrefix>
 					          <!-- here we specify that we want to use the main method within the App class -->
-					          <mainClass>com.ticketNow.demo.ticketNow.src.ticketNow.TicketMain</mainClass>
+					          <mainClass>ticketNow.TicketMain</mainClass>
 				          </manifest>
 			          </archive>
 		        </configuration>
