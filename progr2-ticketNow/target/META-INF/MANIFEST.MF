@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Built-By: owner
+Class-Path: libs/jakarta.persistence-api-3.0.0.jar libs/jakarta.transa
+ ction-api-2.0.0.jar libs/jboss-logging-3.4.3.Final.jar libs/hibernate
+ -commons-annotations-6.0.2.Final.jar libs/jandex-2.4.2.Final.jar libs
+ /classmate-1.5.1.jar libs/byte-buddy-1.12.18.jar libs/jakarta.xml.bin
+ d-api-3.0.1.jar libs/jakarta.activation-2.0.1.jar libs/jaxb-runtime-3
+ .0.2.jar libs/jaxb-core-3.0.2.jar libs/txw2-3.0.2.jar libs/istack-com
+ mons-runtime-4.0.1.jar libs/jakarta.inject-api-2.0.0.jar libs/antlr4-
+ runtime-4.10.1.jar libs/mssql-jdbc-11.2.1.jre17.jar
+Created-By: Apache Maven 3.8.6
+Build-Jdk: 1.8.0_311
+Main-Class: ticketNow.TicketMain
+
